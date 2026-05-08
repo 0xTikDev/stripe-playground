@@ -77,7 +77,7 @@ const session = await stripe.checkout.sessions.create({
         },
     ],
     mode: 'payment',
-    success_url: 'http://localhost:3000/success.html',
+    success_url: `${process.env.DOMAIN}/success.html`,
 })
     res.redirect(303, session.url);
     
